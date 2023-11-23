@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    #keywordInput {
+      padding: 8px;
+      margin: 10px;
+    }
+    #suggestions {
+      margin-top: 20px;
+    }
+  </style>
+  <title>Instagram Description Generator</title>
+</head>
+<body>
+
+  <h1>Instagram Description Generator</h1>
+
+  <label for="keywordInput">Enter Keyword:</label>
+  <input type="text" id="keywordInput" placeholder="Enter your keyword">
+
+  <button onclick="generateDescription()">Generate Suggestions</button>
+
+  <div id="suggestions"></div>
+
+  <script>
+    function generateDescription() {
+      var keyword = document.getElementById('keywordInput').value;
+      var suggestions = generateSuggestions(keyword);
+      displaySuggestions(suggestions);
+    }
+
+    function generateSuggestions(keyword) {
+      // Your logic to generate suggestions based on the entered keyword goes here
+      // For now, let's just return a dummy array
+      return ['Suggestion 1', 'Suggestion 2', 'Suggestion 3'];
+    }
+
+    function displaySuggestions(suggestions) {
+      var suggestionsDiv = document.getElementById('suggestions');
+      suggestionsDiv.innerHTML = '<h2>Suggestions:</h2>';
+      for (var i = 0; i < suggestions.length; i++) {
+        suggestionsDiv.innerHTML += '<p>' + suggestions[i] + '</p>';
+      }
+    }
+  </script>
+
+</body>
+</html>
